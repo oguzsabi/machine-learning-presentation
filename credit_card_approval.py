@@ -73,8 +73,6 @@ conf_matrix = confusion_matrix(y_test, y_pred)
 
 print(accuracy)
 print(conf_matrix)
-# print(class_report)
-
 
 new_data = {
     'Gender': [1],
