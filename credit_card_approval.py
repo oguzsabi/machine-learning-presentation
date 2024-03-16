@@ -47,7 +47,7 @@ X = df.drop('Approved', axis=1)
 y = df['Approved']
 
 # Split the data into training and test sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Apply preprocessing
 X_train_transformed = preprocessor.fit_transform(X_train)
@@ -58,7 +58,7 @@ print(X_train_transformed.shape)
 print(X_test_transformed.shape)
 
 # Initialize the model
-model = LogisticRegression(random_state=0)
+model = LogisticRegression(random_state=42)
 
 # Fit the model on the training set
 model.fit(X_train_transformed, y_train)
